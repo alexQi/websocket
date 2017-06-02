@@ -2,3 +2,31 @@
 
 
 [2017-05-31 15:28:14 #1665.0]	NOTICE	Server is shutdown now.
+[2017-06-02 17:37:15 *24149.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=1] does not exists.
+[2017-06-02 17:37:15 *24148.0]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=1] does not exists.
+[2017-06-02 17:37:15 *24148.0]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=1] does not exists.
+[2017-06-02 17:37:15 *24149.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=1] does not exists.
+[2017-06-02 17:37:15 *24149.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=1] does not exists.
+[2017-06-02 17:37:16 *24148.0]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:37:16 *24148.0]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:37:16 *24148.0]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:37:16 *24148.0]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:37:16 *24149.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:37:16 *24149.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:37:16 *24149.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:37:16 *24149.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:37:16 *24149.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:45:35 *29400.0]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:45:35 *29400.0]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:45:35 *29401.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:45:35 *29401.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=2] does not exists.
+[2017-06-02 17:45:37 *29401.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=12] does not exists.
+[2017-06-02 17:45:37 *29401.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=12] does not exists.
+[2017-06-02 17:45:37 *29401.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=12] does not exists.
+[2017-06-02 17:45:37 *29401.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=12] does not exists.
+[2017-06-02 17:45:37 *29401.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=12] does not exists.
+[2017-06-02 17:45:37 *29401.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=12] does not exists.
+[2017-06-02 17:45:37 *29400.0]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=12] does not exists.
+[2017-06-02 17:45:37 *29401.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=14] does not exists.
+[2017-06-02 17:45:37 *29401.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=14] does not exists.
+[2017-06-02 17:45:37 *29401.1]	ERROR	swFactoryProcess_finish (ERROR 1005): connection[fd=14] does not exists.
