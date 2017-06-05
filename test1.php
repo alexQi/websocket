@@ -9,28 +9,44 @@ $serv->on('connect', function ($serv, $fd){
     });
 });
 $serv->on('receive', function ($serv, $fd, $from_id, $data) {
-    $reqAry = explode("\r\n",$data);
 
-    if (stripos($reqAry[0],"Hello.php") !== FALSE )
-    {
-        echo "用户想调用Hello.php".PHP_EOL;
-        $serv->send($fd,"你调用了Hello.php方法");
+    # 获取phpinfo
+    ob_start();
+    echo "<pre>";
+    echo phpinfo();
+    $result = ob_get_contents();
+
+    ob_end_clean();
+
+    $argv = explode("\r\n",$data);
+    $uri  = explode(' ',$argv[0]);
+    $method       = $uri[0];
+    $paramsString = explode('?',$uri[1]);
+    if (isset($paramsString[1])){
+        $paramUri     = $paramsString[1];
+
+        $paramArray   = array();
+        foreach(explode('&',$paramUri) as $param)
+        {
+            $param = explode('=',$param);
+            $paramArray[$param[0]] = $param[1];
+        }
+        $result =  json_encode($paramArray)."\n".$result;
     }
-    else if (stripos($reqAry[0],"World.php") !== FALSE )
-    {
-        echo "用户想调用World.php".PHP_EOL;
-        $serv->send($fd,"你调用了World.php方法");
-    }
-    else
-    {
-        echo "用户想请求了一个不支持的方法".PHP_EOL;
-        $data = "404，你调用的方法我们不支持。";
-        response($serv,$fd,$data);//封装并发送HTTP响应报文
-//        $serv->send($fd,"404，你调用的方法我们不支持。");
-    }
+
+    $content = "request method is $method \n".$result;
+
+    ob_start();
+    echo $content;
+    require_once './view/index.php';
+    $result = ob_get_contents();
+    ob_end_clean();
+
+    response($serv,$fd,$result);//封装并发送HTTP响应报文
+    $serv->close($fd);
 });
 $serv->on('close', function ($serv, $fd) {
-    echo "Client: Close.\n";
+    echo "Client $fd: Close.\n";
 });
 
 $serv->set(array(
@@ -40,15 +56,16 @@ $serv->set(array(
     'max_request'   => 2000,
     'dispatch_mode' => 1,
     'daemonize'     => 0,
-    'reactor_num'   => 4,
-    'work_num'      => 16,
-    'backlog'       => 128,
+    'open_eof_split'=> true,
+//    'package_eof'   => "\r\n",
+
+    #心跳检测   websocket tcp 适用
+//    'heartbeat_check_interval' => 30,
+//    'heartbeat_idle_time'      => 60,
+
+    #日志
     'log_file'      => './swoole.log',
-    'heartbeat_check_interval' => 30,
-    'heartbeat_idle_time'      => 60,
-    'dispatch_mode' => 1,
-    'open_eof_split' => true,
-    'package_eof' => "\r\n",
+
 ));
 
 /**
