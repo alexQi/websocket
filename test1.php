@@ -36,8 +36,8 @@ $serv->on('receive', function ($serv, $fd, $from_id, $data) {
 
     $content = "request method is $method \n".$result;
 
+    #缓存模板结果
     ob_start();
-    echo $content;
     require_once './view/index.php';
     $result = ob_get_contents();
     ob_end_clean();
@@ -70,7 +70,7 @@ $serv->set(array(
 
 /**
  * 发送内容
- * @param \swoole_server $serv
+ * @param swoole_server $serv
  * @param int $fd
  * @param string $respData
  * @return void
